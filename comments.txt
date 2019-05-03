@@ -1,0 +1,39 @@
+Authentcation
+-----------------------------
+
+-> limiting actions to certain users
+
+-> Bcrypt nodejs
+	hashing the passwords
+https://www.abeautifulsite.net/hashing-passwords-with-nodejs-and-bcrypt
+
+-> Protect routes
+	Vsak middleware (ali router middleware) 
+	ima lahko več funkcij. Te se izvedejo od leve
+	proti desni. Vsaka funkcija mora klicati next(), 
+	da se izvede kasnejša middleware funkcija. Torej 
+	lahko dodamo funkcijo, ki vedno preveri authorizacijo.
+
+-> CSRF Attacks
+	Cross-Site-Request-Forgery
+
+	Nekdo naredi kopijo našega frontend in 
+	zvabi uporabnike tja. Ti svoje podatke vpišejo v to
+	stran, ki jih posreduje (mogoče spremenjene) nam. Mi 
+	jim zaradi pravih podatkov omogočijo session.
+
+	To preprečimo tako, da dela z našim backend le naš frontend, 
+	uporabimo CSRF Token.
+
+	npm:    Csurf 
+
+	CSRF Token v vsako stran vnese kodo - Token, ki je
+	hashed in vsakič znova generirana. Ta se mora ujemati z Tokenom
+	na serverju, da stran velja.
+
+	CSRF moramo uporabiti VEDNO!!!!!
+
+-> ConnectFlash
+	Omogoča nam kratkotrajno hranjenje podatkov v sessions, 
+	recimo za error reports. Po uporabi se avtomatsko izbrišejo.
+	
