@@ -37,3 +37,7 @@ https://www.abeautifulsite.net/hashing-passwords-with-nodejs-and-bcrypt
 	Omogoča nam kratkotrajno hranjenje podatkov v sessions, 
 	recimo za error reports. Po uporabi se avtomatsko izbrišejo.
 	
+-> Crypto (node module)
+	Omogoča nam generacijo nizov znakov, med drugim.
+
+ 
