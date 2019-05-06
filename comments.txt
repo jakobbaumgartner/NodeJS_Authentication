@@ -40,4 +40,16 @@ https://www.abeautifulsite.net/hashing-passwords-with-nodejs-and-bcrypt
 -> Crypto (node module)
 	Omogoča nam generacijo nizov znakov, med drugim.
 
- 
+ -> Validation
+	Client-side (za uporabniško izkušnjo), server-side za delovanje 
+	in varnost.
+	- nekateri database programi imajo vgrajeno notranjo zaščito, 
+	uporabljajmo kot backup
+	
+	paket: express-validator
+				-subpacket /check
+	
+	preverimo vnešene podatke uporabnika, 
+	dodamo extra middlewares (nove funkcije)
+	
+
