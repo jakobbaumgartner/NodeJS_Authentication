@@ -10,7 +10,24 @@ router.get('/login', authController.getLogin);
 
 router.get('/signup', authController.getSignup);
 
-router.post('/login', authController.postLogin);
+router.post('/login',
+[
+  body('email')
+  .isEmail()
+  .custom((value) => {
+    return User.findOne({ email: value }).then(userDoc => {
+      if (!userDoc) {
+        return Promise.reject(
+          'This Email Adress is not in the database.'
+        );
+      }
+    });
+  }),
+  body('password')
+  .isLength({min: 5})
+  .isAlphanumeric()
+]
+, authController.postLogin);
 
 router.post(
   '/signup',
